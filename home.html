@@ -17,20 +17,21 @@
           <div class="stats shadow bg-cyan-300 mt-12">
             <div class="stat">
               <div class="stat-title font-bold">Account Balance</div>
-              <div class="stat-value">69000</div>
+              <div id="account-balance" class="stat-value">69000</div>
             </div>
           </div>
           <div class="divider divider-accent"></div>
           <!-- Account Balance Start -->
           <!-- Features Start -->
           <div>
-            <button class="btn btn-lg btn-info font-semibold">Add Money</button>
-            <button class="btn btn-lg btn-info font-semibold">Cash Out</button>
+            <button id="show-add-money-form" class="btn btn-info font-semibold">Add Money</button>
+            <button id="show-cash-out-form" class="btn btn-info font-semibold">Cash Out</button>
+            <button id="show-transaction-form" class="btn btn-info font-semibold">Transaction</button>
           </div>
           <!-- Features End -->
           <div class="divider divider-accent"></div>
           <!-- Add Money Form Start -->
-          <div class="card bg-base-100 w-11/12 max-w-sm shrink-0 shadow-2xl mb-2">
+          <div id="add-money-form" class="card bg-base-100 w-11/12 max-w-sm shrink-0 shadow-2xl mb-2">
             <form class="card-body">
               <div class="form-control">
                 <label class="label">
@@ -50,11 +51,42 @@
             </form>
           </div>
           <!-- Add Money Form End -->
+          <!-- Cash Out Form Start -->
+          <div id="cash-out-form" class="hidden card bg-base-100 w-11/12 max-w-sm shrink-0 shadow-2xl mb-2">
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-bold">Amount</span>
+                </label>
+                <input id="input-cash-out" type="text" placeholder="Enter amount to withdraw" class="input input-bordered" autocomplete="off" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-bold">Pin Number</span>
+                </label>
+                <input id="input-cash-out-pin" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered" autocomplete="off" required />
+              </div>
+              <div class="form-control mt-6">
+                <button id="withdraw-money-btn" class="btn btn-info font-bold">Withdraw Money</button>
+              </div>
+            </form>
+          </div>
+          <!-- Cash Out Form End -->
+          <!-- Transaction Form Start -->
+          <div id="transaction-section" class="hidden">
+            <h2 class="text-2xl text-center">Transaction History</h2>
+            <div id="transaction-container" class="space-y-2">
+
+            </div>
+          </div>
+          <!-- Transaction Form End -->
         </div>
       </div>
     </div>
   </main>  
   <script src="js/utilities.js"></script>
   <script src="js/add-money.js"></script>
+  <script src="js/cash-out.js"></script>
+  <script src="js/features.js"></script>
 </body>
 </html>

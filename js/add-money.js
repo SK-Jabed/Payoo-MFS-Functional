@@ -19,10 +19,26 @@ document.getElementById("add-money-btn")
 
         const addMoney = getInputFieldValueById("input-add-money");
         const pinNumber = getInputFieldValueById("input-pin-number");
+
+        if (isNaN(addMoney)) {
+            alert("Failed To Add Money");
+            return;
+        }
         
         // Wrong Way to verify. Don't try this at your serious website
         if (pinNumber === 1234) {
-            
+            const balance = getTextFieldValueById("account-balance");
+            const newBalance = balance + addMoney;
+
+            document.getElementById("account-balance").innerText = newBalance;
+
+            // Add to transaction history
+            const paragraph = document.createElement("p");
+            paragraph.innerText = `Added: ${addMoney}TK Balance: ${newBalance}`
+            console.log(paragraph);
+
+            // Should be a common function 
+            document.getElementById("transaction-container").appendChild(paragraph);
         }
         else {
             alert("Failed to add the money. Try again later");

@@ -14,3 +14,19 @@ function getInputFieldValueById(id) {
     const inputValueNumber = parseFloat(inputValue);
     return inputValueNumber;
 }
+
+function getTextFieldValueById(id) {
+    const textValue = document.getElementById(id).innerText;
+    const textValueNumber = parseFloat(textValue);
+    return textValueNumber;
+}
+
+function showSectionById(id) {
+    // Hide All The Sections 
+    document.getElementById("add-money-form").classList.add("hidden");
+    document.getElementById("cash-out-form").classList.add("hidden");
+    document.getElementById("transaction-section").classList.add("hidden");
+
+    // Show the with the provided id 
+    document.getElementById(id).classList.remove("hidden");
+}
