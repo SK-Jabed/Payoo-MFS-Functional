@@ -25,6 +25,6 @@ document.getElementById("add-money-btn")
             
         }
         else {
-            alert("Failed to add the money");
+            alert("Failed to add the money. Try again later");
         }
     });
