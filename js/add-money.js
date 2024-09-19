@@ -17,4 +17,14 @@ document.getElementById("add-money-btn")
         // const addMoney = getInputFieldValueById();
         // console.log("add money value", addMoney);
 
+        const addMoney = getInputFieldValueById("input-add-money");
+        const pinNumber = getInputFieldValueById("input-pin-number");
+        
+        // Wrong Way to verify. Don't try this at your serious website
+        if (pinNumber === 1234) {
+            
+        }
+        else {
+            alert("Failed to add the money");
+        }
     });
